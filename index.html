@@ -4,9 +4,7 @@
 <meta charset=utf-8 />
 <title>TimeClock Automator</title>
 <script src="script.js"></script>
-<script type="text/javascript">
 
-</script>
 <style>
 #drop {
   min-height: 150px;
@@ -18,10 +16,14 @@
 </style>
 </head>
 <body>
-  <h1 align=center>A File Preview Demo</h1>
-  <DIV id="status">Drag the files from a folder to a selected area ...</DIV>
-
-  <DIV id="drop">Drop files here.</DIV>
-  <DIV id="list"></DIV>
+  <h1 align=center>TimeClock Automator</h1>
+  <p>Upload hours.txt </p>
+  <input type="file" id="fileHours" />
+  <button id = "submit">Submit</button>
 </body>
+<script type="text/javascript">
+var doc = document.getElementById('fileHours');
+  doc.addEventListener('change', readHours, false);
+
+</script>
 </html>
