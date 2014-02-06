@@ -3,7 +3,7 @@ function Day (day, hours){
 	this.hours = hours;
 }
 
-var week1, week2;
+var week1 =[], week2=[];
 
 
 String.prototype.killWhiteSpace = function() {
@@ -12,8 +12,24 @@ String.prototype.killWhiteSpace = function() {
 
 function parseHours(hours){
 	console.log(hours);
-	var array = hours.match(/[^\s]+/g);
-	console.log(array[0])
+	var end = 0, start=0;
+	var inTime, outTime;
+	//while (hours.indexOf("OUT:", end))
+	//first in
+	start = hours.indexOf("IN:")
+	end = hours.indexOf("OUT:")
+	inTime = hours.substring(start+3, end);
+	start = hours.indexOf("OUT:", end);
+	end = hours.indexOf("IN:", start);
+
+	if (end!=-1)
+		outTime = hours.substring(start+4, end);
+	else 
+		outTime = hours.substring(start+4);
+	
+	
+	console.log(inTime);
+	console.log(outTime);
 }
 
 function readHours(evt) {
